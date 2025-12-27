@@ -3,7 +3,6 @@ export default function Viewer() {
   const socketId = new URLSearchParams(window.location.search).get("socketId");
   const imgRef = useRef<HTMLImageElement>(null);
   const [status, setStatus] = useState<"connecting" | "connected" | "error">("connecting");
-  const getVideoStreamUrl = (i: string, l: string, u: string) => `https://api.raia.edu.vn/api/exam/videos/stream?studentId=${i}&examRoomId=${l}&fileName=${encodeURIComponent(u)}`;
   
   useEffect(() => {
     const es = new EventSource(`https://api.raia.edu.vn/api/rikkei-education-gateway/stream-screen-frame?socketId=${socketId}`);

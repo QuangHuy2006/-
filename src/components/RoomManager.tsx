@@ -25,7 +25,7 @@ export default function Students() {
   const [currentPage, setCurrentPage] = useState(1);
   const totalPages = 10;
   useEffect(() => {
-    axios.get(`${API}?page=${currentPage}&limit=10`).then((res) => setData(res.data));
+    axios.get(`${API}?page=${currentPage}&limit=10`).then((res) => setData(res.data.data));
   }, [currentPage]);
 
   return (
@@ -51,7 +51,7 @@ export default function Students() {
           </tr>
         </thead>
         <tbody className="bg-white divide-y divide-gray-200">
-          {data?.data?.map((room: Room) => (
+          {data?.map((room: Room) => (
             <tr className="hover:bg-gray-50">
               <td className="px-6 py-4 whitespace-nowrap">
                 <div>

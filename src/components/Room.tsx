@@ -40,7 +40,7 @@ type ExamRoomResponse = {
 };
 export default function Students() {
   const [data, setData] = useState<ExamRoomResponse | null>(null);
-  const [socketData, setSocketData] = useState([]);
+  const [socketData, setSocketData] = useState<Socket[]>([]);
   const [currentRender, setCurrentRender] = useState("all");
   const [text, setText] = useState("");
   const [socket, setSocket] = useState("");
@@ -61,21 +61,20 @@ export default function Students() {
     axios.get(`${socketAPI}?examRoomId=${roomID}`).then((res) => {
       setSocketData(res.data);
     });
-  }, []);
+  }, [API, socketAPI, roomID]);
   useEffect(() => {
     console.log(currentRender);
   }, [currentRender]);
   const isStudentOnline = (studentName: string) => {
     return socketData.some((s: Socket) => s.studentName === studentName);
   };
-  const findStudentSocket = (studentName: string) => {
+  const findStudentSocket = (studentName: string): string | undefined => {
     const student = socketData.find(
       (s: Socket) => s.studentName === studentName
     );
-    return student ? student.socketId : null;
+    if(!student) return;
+    return student.socketId;
   };
-  console.log(socketData);
-
   return (
     <div className="relative">
       <select onChange={(e) => setCurrentRender(e.target.value)}>
@@ -263,7 +262,7 @@ export default function Students() {
                         }`}
                         disabled={!isStudentOnline(st.student.fullName)}
                         onClick={() => {
-                          setSocket(findStudentSocket(st.student.fullName));
+                          setSocket(findStudentSocket(st.student.fullName) as string);
                           document
                             .querySelector(".modal")
                             ?.classList.toggle("flex");
@@ -284,7 +283,7 @@ export default function Students() {
                         }`}
                         disabled={!isStudentOnline(st.student.fullName)}
                         onClick={() => {
-                          sentVideoAPI(findStudentSocket(st.student.fullName));
+                          sentVideoAPI(findStudentSocket(st.student.fullName) as string);
                           navigate(
                             `/screen/?socketId=${findStudentSocket(
                               st.student.fullName
