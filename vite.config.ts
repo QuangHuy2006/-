@@ -38,5 +38,6 @@ export default defineConfig({
         rewrite: (path) => path.replace(/^\/chatAll/, "/chatAll"),
       },
     },
+    allowedHosts: ["ffpjerqien.onrender.com"],
   },
 });
