@@ -28,7 +28,7 @@ const { Option } = Select; // Dùng cho Select Role
 // --- CẤU HÌNH API VÀ PROXY ---
 const BASE_API_PATH: string = "/api-rikkei/users";
 const AUTH_TOKEN: string =
-  "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InF1eW52QHJpa2tlaWFjYWRlbXkuY29tIiwibmFtZSI6Ik5n4buNIFbEg24gUXXDvSIsImlkIjoxOCwicm9sZSI6W3siaWQiOjIsIm5hbWUiOiJNQU5BR0VSIn0seyJpZCI6MywibmFtZSI6IlRFQUNIRVIifV0sInR5cGUiOiJ1c2VyIiwiaWF0IjoxNzY1ODUwNTk3LCJleHAiOjE3NjU5MzY5OTd9.UL41GL3R0aNgnc1m4IlxoYeKLAnYiz2c7sXHAOYkjAw";
+  "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InJpa2tlaXJkQGdtYWlsLmNvbSIsIm5hbWUiOiJSJkQiLCJpZCI6ODMsInJvbGUiOlt7ImlkIjoxLCJuYW1lIjoiQURNSU4ifSx7ImlkIjoyLCJuYW1lIjoiTUFOQUdFUiJ9LHsiaWQiOjMsIm5hbWUiOiJURUFDSEVSIn0seyJpZCI6NCwibmFtZSI6IlRFQUNIRVJfQVNTSVNUQU5UIn0seyJpZCI6NSwibmFtZSI6IkdVRVNUIn1dLCJ0eXBlIjoidXNlciIsImlhdCI6MTc2NzA1ODI5NiwiZXhwIjoxNzY3MTQ0Njk2fQ.inJxLW-Tq5uQukH-tc2FYpcOknPpTkM25TeKJaVh7-Q";
 // -----------------------------------------------------------------
 
 // --- INTERFACE ---

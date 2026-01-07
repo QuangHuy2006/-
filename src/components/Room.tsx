@@ -68,7 +68,7 @@ export default function Students() {
   const isStudentOnline = (studentName: string) => {
     return socketData.some((s: Socket) => s.studentName === studentName);
   };
-  const findStudentSocket = (studentName: string): string | undefined => {
+  const findStudentSocket = (studentName: string) => {
     const student = socketData.find(
       (s: Socket) => s.studentName === studentName
     );
@@ -283,7 +283,7 @@ export default function Students() {
                         }`}
                         disabled={!isStudentOnline(st.student.fullName)}
                         onClick={() => {
-                          sentVideoAPI(findStudentSocket(st.student.fullName) as string);
+                          sentVideoAPI(findStudentSocket(st.student.fullName));
                           navigate(
                             `/screen/?socketId=${findStudentSocket(
                               st.student.fullName
