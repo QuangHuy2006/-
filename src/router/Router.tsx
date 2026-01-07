@@ -6,6 +6,7 @@ import Screen from "../components/Screen";
 import Students from "../components/Room";
 import Rooms from "../components/RoomManager";
 import Layout from "../components/Layout";
+import Test from "../components/test";
 // import Bracket from "../components/CompetitionTable/bracket/BracketMain";
 
 const router = createBrowserRouter([
@@ -54,6 +55,14 @@ const router = createBrowserRouter([
     element: (
       <Layout>
         <Rooms></Rooms>
+      </Layout>
+    ),
+  },
+  {
+    path: "test",
+    element: (
+      <Layout>
+        <Test></Test>
       </Layout>
     ),
   },

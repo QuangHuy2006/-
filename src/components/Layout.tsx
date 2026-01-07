@@ -55,6 +55,10 @@ export default function Layout({ children }: PropsWithChildren) {
               <NavLink to="/screen" className={linkClass}>
                 Screen
               </NavLink>
+
+              <NavLink to="/test" className={linkClass}>
+                Test
+              </NavLink>
             </nav>
           </div>
         </div>
